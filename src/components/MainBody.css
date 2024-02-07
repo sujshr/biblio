@@ -1,0 +1,100 @@
+#mainBody {
+  padding: 0.5rem;
+}
+input[type="search"] {
+  outline: none;
+  width: 90%;
+  border-radius: 20px 0 0 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-right: none;
+}
+
+#searchBar {
+  display: flex;
+  margin: auto;
+  max-width: 500px;
+  width: 80vw;
+}
+
+#searchIconContainer {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 20px 20px 0;
+  border: 1px solid #ccc;
+  border-left: none;
+}
+
+#searhIcon {
+  height: 25px;
+  cursor: pointer;
+  transition: filter 0.3s ease-in;
+}
+
+#searhIcon:hover {
+  filter: brightness(500%);
+}
+
+#welcomeDiv {
+  text-align: center;
+  margin-top: 5vh;
+}
+
+#bookContainer {
+  padding: 3vw;
+  margin-top: 5vh;
+}
+
+#bookContainer h3 {
+  color: rgb(70, 70, 70);
+  margin-bottom: 5vh;
+}
+
+#bookList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 5vw;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  align-items: center;
+  margin-bottom: 5vh;
+}
+
+.bookImg {
+  height: 300px;
+  width: 190px;
+  border-radius: 5px;
+}
+
+.bookName {
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.info {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.free {
+  color: green;
+}
