@@ -1,16 +1,16 @@
-import React, { useState } from "react";
 import { Star } from "./BookList.jsx";
 import "./DescriptionDiv.css";
+
 function DescriptionDiv(props) {
   const currentBook = props.currentBook;
-  console.log(currentBook);
+
   return (
     <div id="descriptionDiv" className={props.visibility}>
       <span id="crossButton" onClick={props.removeVisibility}>
         X
       </span>
 
-      <div id="container">
+      <div id="infoContainer">
         <div className="generalInfo">
           <img
             src={currentBook.imageLinks.thumbnail}
@@ -27,6 +27,7 @@ function DescriptionDiv(props) {
                 </p>
               );
             })}
+
             <div className="info">
               <span className="rating">
                 {currentBook.averageRating ? currentBook.averageRating : 3.8}

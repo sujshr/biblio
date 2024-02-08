@@ -3,6 +3,7 @@ import "./FormBody.css";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
+// Popup div component for successful registration
 function SuccessDiv() {
   return (
     <div id="successDiv">
@@ -13,6 +14,8 @@ function SuccessDiv() {
     </div>
   );
 }
+
+// Form component
 function Form() {
   const {
     register,
@@ -21,6 +24,7 @@ function Form() {
     formState: { errors },
   } = useForm();
 
+  // state to monitor whether form is submitted or not
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const onSubmit = () => {
@@ -36,6 +40,8 @@ function Form() {
 
       <form onSubmit={handleSubmit(onSubmit)}>
         {isSubmitted && <SuccessDiv />}
+
+        {/* firstname field  */}
         <div className="field">
           <label htmlFor="firstname">First Name:</label>
           <input
@@ -57,6 +63,7 @@ function Form() {
           <p className="error">{errors.fname?.message}</p>
         </div>
 
+        {/* last name field  */}
         <div className="field">
           <label htmlFor="lastname">Last Name:</label>
           <input
@@ -70,6 +77,8 @@ function Form() {
           <p className="error">{errors.lname?.message}</p>
         </div>
 
+        {/* email field  */}
+        {/* span2 class spans the field in 2 grid columns  */}
         <div className="field span2">
           <label htmlFor="email">Email:</label>
           <input
@@ -84,6 +93,7 @@ function Form() {
           <p className="error">{errors.email?.message}</p>
         </div>
 
+        {/* password field  */}
         <div className="field">
           <label htmlFor="password">Password:</label>
           <input
@@ -105,6 +115,7 @@ function Form() {
           <p className="error">{errors.password?.message}</p>
         </div>
 
+        {/* confirm password field  */}
         <div className="field">
           <label htmlFor="confirm_password">Confirm Password:</label>
           <input
@@ -121,6 +132,7 @@ function Form() {
           <p className="error">{errors.confirmPassword?.message}</p>
         </div>
 
+        {/* submit button  */}
         <input type="submit" className="span2" value="Submit" />
       </form>
     </div>

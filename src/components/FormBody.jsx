@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "./Form";
-
 import "./FormBody.css";
+
 function FormBody() {
   return (
     <div id="formBody">

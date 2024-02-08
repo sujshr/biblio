@@ -1,6 +1,9 @@
 #mainBody {
   padding: 0.5rem;
 }
+
+/* search bar stylings  */
+
 input[type="search"] {
   outline: none;
   width: 90%;
@@ -42,6 +45,7 @@ input[type="search"] {
   margin-top: 5vh;
 }
 
+/* loading animation stylings */
 .spinner {
   width: 50px;
   height: 50px;
@@ -58,6 +62,7 @@ input[type="search"] {
   height: 40vh;
   width: 100%;
 }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);

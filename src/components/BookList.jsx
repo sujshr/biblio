@@ -3,6 +3,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import "./BookList.css";
 import DescriptionDiv from "./DescriptionDiv";
+
+// star icon component for ratings
 function Star() {
   return (
     <svg
@@ -21,6 +23,7 @@ function Star() {
   );
 }
 
+// Book component for each book in the result
 function Book(props) {
   return (
     <div
@@ -44,20 +47,33 @@ function Book(props) {
 
 function BookList(props) {
   let searchInput = props.searchInput;
+  // state to store fetched data
   const [data, setData] = useState([]);
+
+  // state to store the books being displayed
   const [books, setBooks] = useState([]);
+
+  // state to set the book in description div
   const [currentBook, setCurrentBook] = useState({});
+
+  // state to monitor the visibility of blur bg cover and DescriptionDiv
   const [visibility, setVisibility] = useState("none");
+
+  // state to monitor whether the data is fetched or not
   const [dataLoaded, setDataLoaded] = useState(false);
+
+  // function to update the book in description div
   const handleSetBook = (index) => {
-    setCurrentBook(data[index]);
+    setCurrentBook(books[index]);
     setVisibility("visible");
   };
 
+  // function to remove the visibility of the DescriptionDiv and blur bg cover
   const removeVisibility = () => {
     setVisibility("none");
   };
 
+  // fetching the data using useEffect
   useEffect(() => {
     axios
       .get("https://reactnd-books-api.udacity.com/books", {
@@ -74,6 +90,7 @@ function BookList(props) {
       });
   }, []);
 
+  // function to update the BookList according to the search input
   useEffect(() => {
     if (!searchInput) {
       setBooks(data);
@@ -87,6 +104,7 @@ function BookList(props) {
 
   return (
     <div id="booksContainer">
+      <div id="bgCover" className={visibility} onClick={removeVisibility}></div>
       <div id="bookList">
         {books.map((book, i) => {
           return (
@@ -94,6 +112,7 @@ function BookList(props) {
           );
         })}
       </div>
+
       {dataLoaded && (
         <DescriptionDiv
           currentBook={currentBook}

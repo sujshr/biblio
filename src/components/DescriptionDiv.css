@@ -16,14 +16,17 @@
   visibility: hidden;
 }
 
-#descriptionDiv h3{
+#descriptionDiv h3 {
   max-width: 200px;
 }
-#container {
+
+#infoContainer {
   padding: 5px;
   max-height: 82.5vh;
   overflow-y: scroll;
+  z-index: 10;
 }
+
 .generalInfo {
   display: flex;
   flex-direction: column;
@@ -47,13 +50,8 @@
   width: 130px;
 }
 
-#container::-webkit-scrollbar {
+#infoContainer::-webkit-scrollbar {
   display: none;
-}
-
-#container::-webkit-scrollbar-thumb {
-  background-color: #0073ff;
-  border-radius: 2px;
 }
 
 #crossButton {

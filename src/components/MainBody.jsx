@@ -5,23 +5,29 @@ import { useState } from "react";
 import searchIcon from "../assets/searchIcon.png";
 
 function MainBody() {
+  // state to take search input 
   const [searchInput, setSearchInput] = useState("");
+  // state for monitoring the loadin animation 
   const [loaderDisplay, setLoaderDisplay] = useState({ display: "flex" });
+  // function to update state along with search input 
   const handleChange = (e) => {
     setSearchInput(e.target.value);
   };
 
+  // function to handle searchIcon click 
   const handleClick = () => {
     var target = document.getElementById("discover");
     target.scrollIntoView({ top: 100, behavior: "smooth" });
   };
 
+  // function to hide the loading animation on load 
   const handleLoad = () => {
     setLoaderDisplay({ display: "none" });
   };
 
   return (
     <div id="mainBody">
+      
       <div id="searchBar">
         <input
           type="search"
@@ -43,11 +49,14 @@ function MainBody() {
 
         <h2>Best, yet the most patient teacher.</h2>
       </div>
+
       <div id="bookContainer">
         <h3>Discover what you like</h3>
+
         <div id="loading" style={loaderDisplay}>
           <div className="spinner"></div>
         </div>
+
         <BookList searchInput={searchInput} setLoaderDisplay={handleLoad} />
       </div>
     </div>

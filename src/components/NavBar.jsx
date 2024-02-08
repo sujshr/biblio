@@ -3,6 +3,7 @@ import "./NavBar.css";
 import { Routes, Route, Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
 
+// Registration button component
 function RegisterButton() {
   return (
     <>
@@ -13,6 +14,7 @@ function RegisterButton() {
   );
 }
 
+// Home button component 
 function HomeButton() {
   return (
     <Link to="/">
@@ -21,6 +23,7 @@ function HomeButton() {
   );
 }
 
+// Nav var component 
 function NavBar() {
   return (
     <nav id="navBar">
