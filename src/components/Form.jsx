@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import "./FormBody.css";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 function SuccessDiv() {
   return (
     <div id="successDiv">
       <h2>Registration Successful </h2>
-      <h3>Please navigate back to home page</h3>
+      <h3>
+        Please navigate back to <Link to="/">Home page</Link>
+      </h3>
     </div>
   );
 }
@@ -20,7 +23,7 @@ function Form() {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const onSubmit = (data) => {
+  const onSubmit = () => {
     setIsSubmitted(true);
   };
 
@@ -41,6 +44,14 @@ function Form() {
             name="firstname"
             {...register("fname", {
               required: "Enter First Name",
+              minLength: {
+                value: 3,
+                message: "First Name Must be longer than 3 characters",
+              },
+              maxLength: {
+                value: 30,
+                message: "First Name must be shorter than 30 characters",
+              },
             })}
           />
           <p className="error">{errors.fname?.message}</p>
@@ -82,12 +93,12 @@ function Form() {
             {...register("password", {
               required: "Enter Password",
               minLength: {
-                value: 4,
-                message: "Passowrd Must be longer than 4 characters",
+                value: 10,
+                message: "Passowrd Must be longer than 10 characters",
               },
-              maxLength: {
-                value: 20,
-                message: "Password must be shorter than 20 characters",
+              pattern: {
+                value: /^(?=.*[!@#$%^&*])/,
+                message: "Password must contain at least one special character",
               },
             })}
           />

@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-
+import "./BookList.css";
+import DescriptionDiv from "./DescriptionDiv";
 function Star() {
   return (
     <svg
@@ -22,7 +23,12 @@ function Star() {
 
 function Book(props) {
   return (
-    <div className="book">
+    <div
+      className="book"
+      onClick={() => {
+        props.handleSetBook(props.index);
+      }}
+    >
       <img src={props.book.imageLinks.thumbnail} className="bookImg" alt="" />
       <p className="bookName">{props.book.title}</p>
       <div className="info">
@@ -40,6 +46,17 @@ function BookList(props) {
   let searchInput = props.searchInput;
   const [data, setData] = useState([]);
   const [books, setBooks] = useState([]);
+  const [currentBook, setCurrentBook] = useState({});
+  const [visibility, setVisibility] = useState("none");
+  const [dataLoaded, setDataLoaded] = useState(false);
+  const handleSetBook = (index) => {
+    setCurrentBook(data[index]);
+    setVisibility("visible");
+  };
+
+  const removeVisibility = () => {
+    setVisibility("none");
+  };
 
   useEffect(() => {
     axios
@@ -48,6 +65,9 @@ function BookList(props) {
       })
       .then((res) => {
         setData(res.data.books);
+        props.setLoaderDisplay();
+        setDataLoaded(true);
+        setCurrentBook(res.data.books[0]);
       })
       .catch((err) => {
         console.log(err);
@@ -66,12 +86,24 @@ function BookList(props) {
   }, [props.searchInput, data]);
 
   return (
-    <div id="bookList">
-      {books.map((book, i) => {
-        return <Book key={i} book={book} />;
-      })}
+    <div id="booksContainer">
+      <div id="bookList">
+        {books.map((book, i) => {
+          return (
+            <Book key={i} book={book} index={i} handleSetBook={handleSetBook} />
+          );
+        })}
+      </div>
+      {dataLoaded && (
+        <DescriptionDiv
+          currentBook={currentBook}
+          visibility={visibility}
+          removeVisibility={removeVisibility}
+        />
+      )}
     </div>
   );
 }
 
 export default BookList;
+export { Star };

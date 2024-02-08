@@ -2,11 +2,22 @@ import React from "react";
 import "./MainBody.css";
 import BookList from "./BookList";
 import { useState } from "react";
+import searchIcon from "../assets/searchIcon.png";
+
 function MainBody() {
   const [searchInput, setSearchInput] = useState("");
-
+  const [loaderDisplay, setLoaderDisplay] = useState({ display: "flex" });
   const handleChange = (e) => {
     setSearchInput(e.target.value);
+  };
+
+  const handleClick = () => {
+    var target = document.getElementById("discover");
+    target.scrollIntoView({ top: 100, behavior: "smooth" });
+  };
+
+  const handleLoad = () => {
+    setLoaderDisplay({ display: "none" });
   };
 
   return (
@@ -23,19 +34,21 @@ function MainBody() {
         />
 
         <div id="searchIconContainer">
-          <img src="./src/assets/searchIcon.png" alt="" id="searhIcon" />
+          <img src={searchIcon} alt="" id="searhIcon" onClick={handleClick} />
         </div>
       </div>
 
       <div id="welcomeDiv">
-        <h1>Welcome to Biblio</h1>
+        <h1 id="discover">Welcome to Biblio</h1>
 
         <h2>Best, yet the most patient teacher.</h2>
       </div>
-
       <div id="bookContainer">
         <h3>Discover what you like</h3>
-        <BookList searchInput={searchInput} />
+        <div id="loading" style={loaderDisplay}>
+          <div className="spinner"></div>
+        </div>
+        <BookList searchInput={searchInput} setLoaderDisplay={handleLoad} />
       </div>
     </div>
   );

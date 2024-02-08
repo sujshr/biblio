@@ -11,6 +11,10 @@ button{
   transition: all 0.3s ease-in-out;
 }
 
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
     display: none;
+}
+
+#root{
+  
 }
