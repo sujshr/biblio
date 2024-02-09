@@ -8,7 +8,7 @@ function App() {
     <>
       <BrowserRouter>
         <NavBar />
-        
+
         <Routes>
           <Route path="/*" element={<MainBody />} />
           <Route path="/register" element={<FormBody />} />

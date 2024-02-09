@@ -35,7 +35,7 @@ function Book(props) {
       <img src={props.book.imageLinks.thumbnail} className="bookImg" alt="" />
       <p className="bookName">{props.book.title}</p>
       <div className="info">
-        <span className="rating">
+        <span className="flex items-center">
           {props.book.averageRating ? props.book.averageRating : 3.8}
           <Star />
         </span>
@@ -105,7 +105,7 @@ function BookList(props) {
   return (
     <div id="booksContainer">
       <div id="bgCover" className={visibility} onClick={removeVisibility}></div>
-      <div id="bookList">
+      <div id="bookList" className="flex justify-around">
         {books.map((book, i) => {
           return (
             <Book key={i} book={book} index={i} handleSetBook={handleSetBook} />

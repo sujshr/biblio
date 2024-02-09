@@ -28,12 +28,8 @@
 }
 
 .generalInfo {
-  display: flex;
-  flex-direction: column;
   float: left;
-  align-items: center;
   width: fit-content;
-  justify-content: space-between;
   box-shadow: 0 0 2px gray;
   padding: 10px;
   margin-right: 20px;

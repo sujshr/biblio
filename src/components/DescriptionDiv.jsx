@@ -11,7 +11,7 @@ function DescriptionDiv(props) {
       </span>
 
       <div id="infoContainer">
-        <div className="generalInfo">
+        <div className="generalInfo flex flex-col justify-between items-center">
           <img
             src={currentBook.imageLinks.thumbnail}
             className="bookImg"

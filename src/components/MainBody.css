@@ -14,7 +14,6 @@ input[type="search"] {
 }
 
 #searchBar {
-  display: flex;
   margin: auto;
   max-width: 500px;
   width: 80vw;
@@ -22,9 +21,6 @@ input[type="search"] {
 
 #searchIconContainer {
   width: 10%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 0 20px 20px 0;
   border: 1px solid #ccc;
   border-left: none;
@@ -56,9 +52,6 @@ input[type="search"] {
 }
 
 #loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 40vh;
   width: 100%;
 }

@@ -6,10 +6,16 @@ import { Link } from "react-router-dom";
 // Popup div component for successful registration
 function SuccessDiv() {
   return (
-    <div id="successDiv">
-      <h2>Registration Successful </h2>
-      <h3>
-        Please navigate back to <Link to="/">Home page</Link>
+    <div
+      id="successDiv"
+      className="flex flex-col items-center justify-around text-center"
+    >
+      <h2 className="font-bold text-3xl">Registration Successful </h2>
+      <h3 className="font-semibold text-xl">
+        Please navigate back to{" "}
+        <Link to="/">
+          <p className="text-blue-600">Home page</p>
+        </Link>
       </h3>
     </div>
   );
@@ -32,13 +38,13 @@ function Form() {
   };
 
   return (
-    <div id="form">
+    <div id="form" className="flex flex-col justify-between">
       <div id="welcomeTexts">
-        <h5>Get Started for free</h5>
-        <h1>Register to Biblio</h1>
+        <h5 className="text-xl font-bold">Get Started for free</h5>
+        <h1 className="font-bold text-3xl">Register to Biblio</h1>
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className="grid">
         {isSubmitted && <SuccessDiv />}
 
         {/* firstname field  */}

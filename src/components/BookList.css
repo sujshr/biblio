@@ -9,10 +9,7 @@
 }
 
 #bookList {
-  display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
   gap: 5vw;
   padding-top: 5px;
 }

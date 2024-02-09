@@ -26,7 +26,7 @@ function HomeButton() {
 // Nav var component 
 function NavBar() {
   return (
-    <nav id="navBar">
+    <nav id="navBar" className="flex items-center bg-white justify-between">
       <Link to="/">
         <img src={Logo} alt="" id="logo" />
       </Link>
