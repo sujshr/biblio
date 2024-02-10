@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./FormBody.css";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-
+import { UserData } from "../App";
 // Popup div component for successful registration
 function SuccessDiv() {
   return (
@@ -23,6 +23,7 @@ function SuccessDiv() {
 
 // Form component
 function Form() {
+  const userData = useContext(UserData);
   const {
     register,
     handleSubmit,
@@ -33,15 +34,18 @@ function Form() {
   // state to monitor whether form is submitted or not
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const onSubmit = () => {
+  const { setUser } = useContext(UserData);
+  const onSubmit = (data) => {
+    console.log(data);
     setIsSubmitted(true);
+    setUser(data);
   };
 
   return (
     <div id="form" className="flex flex-col justify-between">
       <div id="welcomeTexts">
         <h5 className="text-xl font-bold">Get Started for free</h5>
-        <h1 className="font-bold text-3xl">Register to Biblio</h1>
+        <h1 className="font-bold text-2xl">Register to Kalvium Books</h1>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="grid">

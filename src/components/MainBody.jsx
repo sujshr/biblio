@@ -48,7 +48,7 @@ function MainBody() {
 
       <div id="welcomeDiv">
         <h1 id="discover" className="text-3xl font-bold">
-          Welcome to Biblio
+          Welcome to Kalvium Books
         </h1>
 
         <h2 className="font-semibold text-xl">

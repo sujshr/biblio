@@ -2,6 +2,10 @@
   padding: 1rem 2rem;
 }
 
+#userButton {
+  padding: 8px;
+}
+
 #logo {
   height: 80px;
   transition: transform 0.3s ease-in-out;
@@ -10,4 +14,48 @@
 
 #logo:hover {
   transform: scale(1.03);
+}
+
+#userIcon {
+  height: 1.5rem;
+}
+
+#userInfo {
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  width: fit-content;
+  top: 115%;
+  padding: 8px 10px;
+  left: -40%;
+  border-radius: 8px;
+  box-shadow: 0 0 2px gray;
+  z-index: 60;
+}
+
+#coverDiv {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+#coverDiv.none {
+  display: none;
+}
+
+#userInfo.none {
+  display: none;
+}
+@media (width < 500px) {
+  #logo {
+    height: 50px;
+  }
+}
+
+@media (width < 350px) {
+  #logo {
+    height: 30px;
+  }
 }

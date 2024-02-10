@@ -74,7 +74,7 @@ input[type="submit"] {
   transition: background-color 0.3s ease-in-out;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover {
   background-color: #0b2344;
 }
 
@@ -138,5 +138,17 @@ input[type="submit"]:hover{
   }
   .span2 {
     grid-column: span 1;
+  }
+}
+
+@media (width < 350px) {
+  #welcomeTexts > h1 {
+    width: 300px;
+    text-wrap: wrap;
+    margin: auto;
+  }
+
+  .field{
+    width: 300px;
   }
 }
