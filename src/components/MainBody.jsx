@@ -14,7 +14,7 @@ function MainBody() {
     setSearchInput(e.target.value);
   };
 
-  // function to handle searchIcon click
+  // function to handle searchIcon Click
   const handleClick = () => {
     var target = document.getElementById("discover");
     target.scrollIntoView({ top: 100, behavior: "smooth" });

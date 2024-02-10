@@ -2,7 +2,10 @@ import React, { useContext, useState } from "react";
 import "./FormBody.css";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+
+// importing use data context
 import { UserData } from "../App";
+
 // Popup div component for successful registration
 function SuccessDiv() {
   return (
@@ -23,7 +26,6 @@ function SuccessDiv() {
 
 // Form component
 function Form() {
-  const userData = useContext(UserData);
   const {
     register,
     handleSubmit,
@@ -35,10 +37,12 @@ function Form() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const { setUser } = useContext(UserData);
+
   const onSubmit = (data) => {
     console.log(data);
     setIsSubmitted(true);
     setUser(data);
+    localStorage.setItem("user", JSON.stringify(data));
   };
 
   return (

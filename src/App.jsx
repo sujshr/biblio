@@ -4,15 +4,20 @@ import FormBody from "./components/FormBody";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import { createContext } from "react";
+
+// creating context to share userdata
 const UserData = createContext();
 
 function App() {
+  // state to store user data 
   const [user, setUser] = useState({});
+
+  // context value containig the user data and set user data function 
   const contextValue = {
     user,
     setUser,
   };
-  console.log(user);
+  
   return (
     <>
       <BrowserRouter>

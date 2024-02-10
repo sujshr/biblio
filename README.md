@@ -1,8 +1,13 @@
-# React + Vite
+# Kalvium Books
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a sample project for a book website built with React, React Router DOM, React Form Hook, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Introduction
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is aimed at creating a simple book website where users can browse through a collection of books.Another objective is to implement react formHook.
+
+## Features
+
+- Browse through a collection of books
+- View description about each book
+- Test formHook

@@ -146,6 +146,7 @@ input[type="submit"]:hover {
     width: 300px;
     text-wrap: wrap;
     margin: auto;
+    font-weight: bolder;
   }
 
   .field{

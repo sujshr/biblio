@@ -7,6 +7,7 @@ function FormBody() {
     <div id="formBody" className="flex items-center justify-between">
       <div id="status" className="text-center">
         <h1 className="font-bold">Welcome to Kalvium Books</h1>
+
         <h2 className="font-bold">Best, yet the most patient teacher.</h2>
       </div>
       <Form />

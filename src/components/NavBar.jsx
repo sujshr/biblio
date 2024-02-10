@@ -3,6 +3,8 @@ import "./NavBar.css";
 import { Routes, Route, Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import userIcon from "../assets/userIcon.png";
+
+// importing user data context
 import { UserData } from "../App";
 
 // Registration button component
@@ -11,6 +13,7 @@ function RegisterButton() {
   return (
     <div id="userInfoButtons" className="flex items-center relative">
       {user.fname && <UserInfo userData={user} />}
+
       <Link to="/register">
         <button className="navButton">Register</button>
       </Link>
@@ -18,6 +21,7 @@ function RegisterButton() {
   );
 }
 
+// user info Container component
 function UserInfo({ userData }) {
   const [profileDisplay, setProfileDisplay] = useState("none");
 
@@ -31,6 +35,7 @@ function UserInfo({ userData }) {
       >
         <img src={userIcon} id="userIcon" alt="userIcon" />
       </button>
+
       <div id="userInfo" className={profileDisplay}>
         <p className="font-semibold text-blue-500">User:</p>
         <p>{`${userData.fname} ${userData.lname}`}</p>
@@ -38,6 +43,7 @@ function UserInfo({ userData }) {
         <p className="font-semibold text-blue-500">E-mail:</p>
         <p>{userData.email}</p>
       </div>
+
       <div
         id="coverDiv"
         className={profileDisplay}
@@ -48,6 +54,7 @@ function UserInfo({ userData }) {
     </div>
   );
 }
+
 // Home button component
 function HomeButton() {
   return (
