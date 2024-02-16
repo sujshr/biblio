@@ -48,15 +48,3 @@
 #userInfo.none {
   display: none;
 }
-
-@media (width < 500px) {
-  #logo {
-    height: 50px;
-  }
-}
-
-@media (width < 350px) {
-  #logo {
-    height: 30px;
-  }
-}

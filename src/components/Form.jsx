@@ -49,7 +49,7 @@ function Form() {
     <div id="form" className="flex flex-col justify-between">
       <div id="welcomeTexts">
         <h5 className="text-xl font-bold">Get Started for free</h5>
-        <h1 className="font-bold text-2xl">Register to Kalvium Books</h1>
+        <h1 className="font-bold text-2xl">Register to Biblio</h1>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="grid">
